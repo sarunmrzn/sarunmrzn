@@ -1,6 +1,11 @@
 @font-face {
-  font-family: "Roboto";
+  font-family: "RobotoMono";
   src: url("../fonts/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: "MajorMono";
+  src: url("../fonts/MajorMonoDisplay-Regular.ttf");
 }
 
 $colors: (
@@ -8,11 +13,8 @@ $colors: (
   text: #ffffff,
 );
 
-:export {
-  background: map-get($map: $colors, $key: "background");
-}
-
-$font: "Roboto";
+$normal: "RobotoMono";
+$style-font: "MajorMono";
 
 $breakpoints: (
   xs: 576px,
@@ -38,19 +40,10 @@ body {
   background-color: map-get($map: $colors, $key: "background");
   color: map-get($map: $colors, $key: "text");
   font-size: 1rem;
-  font-family: $font;
+  font-family: $normal;
   line-height: 1.5rem;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-}
-
-h1 {
-  font-size: 2rem;
-  line-height: 2.375rem;
-  @media (min-width: map-get($map: $breakpoints, $key: "sm")) {
-    font-size: 2.625rem;
-    line-height: 4rem;
-  }
 }
 
 #layout-wrapper {
@@ -62,23 +55,30 @@ h1 {
   width: 100%;
   height: 2rem;
   position: absolute;
-  z-index: 3;
 }
 
 #nav {
-  width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
+  position: absolute;
+  left: 0;
 
   ul {
+    margin: 1rem;
+    padding: 0;
     display: flex;
+    flex-direction: column;
     list-style-type: none;
     justify-content: space-between;
-    margin: auto;
-    width: map-get($breakpoints, "xs");
+    background-color: #000000;
+    padding: 0.5rem;
+    border-radius: 50px;
+
+    li {
+      padding: 0.5rem;
+    }
   }
 }
 
@@ -87,4 +87,43 @@ h1 {
   height: 100vh;
   justify-content: center;
   align-items: center;
+}
+
+#top-arc {
+  position: absolute;
+  top: -33%;
+  width: 100%;
+  height: 475px;
+  border-radius: 35%;
+  background-color: #292828;
+  width: 100%;
+  height: 475px;
+}
+
+.self-intro {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 3%;
+
+  h1 {
+    font-size: 5rem;
+    font-family: $style-font;
+    font-weight: 10;
+    letter-spacing: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+#display-picture {
+  padding: 5rem;
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: unset;
+  }
 }
