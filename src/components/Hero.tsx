@@ -3,7 +3,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import AntD from "../icons/antd.png";
 import Arch from "../icons/arch.png";
-import Bootstrap from "../icons/boostrap.png";
+import Bootstrap from "../icons/bootstrap.png";
 import CSS3 from "../icons/css-3.png";
 import Debian from "../icons/debian.png";
 import Docker from "../icons/docker.webp";
