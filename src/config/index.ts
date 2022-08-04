@@ -74,7 +74,7 @@ const generateParticleConfig = () => {
         type: "image",
       },
       size: {
-        value: 24,
+        value: 36,
         animation: {
           speed: 100,
           minimumValue: 0.1,
